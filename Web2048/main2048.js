@@ -196,14 +196,15 @@ $(document).keydown(function(event){
 //?: touchstart/touchend Web API事件
 var mo=function(e){e.preventDefault();};
 document.addEventListener("touchstart",function(event){
-    $("#grid_container").style.overflow='hidden';        
-    document.addEventListener("touchmove",mo,false);//禁止页面滑动
+  
+    $("#grid_container").css('overflow','hidden');        
+    document.body.addEventListener("touchmove",mo,false);//禁止页面滑动
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 });
 //屏幕坐标系中 Y轴 是向下的
 document.addEventListener("touchend",function(event){
-    $("#grid_container").style.overflow='';//出现滚动条
+    $("#grid_container").css('overflow','');;//出现滚动条
     document.removeEventListener("touchmove",mo,false);      
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
