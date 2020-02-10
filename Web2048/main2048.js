@@ -205,13 +205,15 @@ document.addEventListener("touchend",function(event){
     var deltax = endx-startx;
     var deltay = endy-starty;
 
-    if(Math.abs(deltax) < 0.3*documentWidth && Math.abs(deltay) < 0.3*documentWidth)
-        return;//防止误触，路径小于屏幕的0.3倍，则判定为非移动手势
+    if(Math.abs(deltax) < 0.15*documentWidth && Math.abs(deltay) < 0.15*documentWidth)
+        return;//防止误触，路径小于屏幕的0.2倍，则判定为非移动手势
     //X
     if( Math.abs(deltax) >= Math.abs(deltay)){ //?: js ,math.abs 方法
        if(deltax >0){
         //move right
+        event.preventDefault();
         if(moveRight()){
+            
             setTimeout("random_Number()",210);
             setTimeout("checkGameOver()",300);
         }
@@ -228,6 +230,7 @@ document.addEventListener("touchend",function(event){
 
     else{
         if(deltay >0){
+            event.preventDefault();
             //move dowm
             if(moveDown()){
                 setTimeout("random_Number()",210);
