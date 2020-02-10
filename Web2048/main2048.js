@@ -195,6 +195,7 @@ $(document).keydown(function(event){
 //?:js事件监听器 绑定一个匿名函数（用于监测触控
 //?: touchstart/touchend Web API事件
 document.addEventListener("touchstart",function(event){
+    event.preventDefault();
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 });
@@ -211,7 +212,6 @@ document.addEventListener("touchend",function(event){
     if( Math.abs(deltax) >= Math.abs(deltay)){ //?: js ,math.abs 方法
        if(deltax >0){
         //move right
-        event.preventDefault();
         if(moveRight()){
             
             setTimeout("random_Number()",210);
@@ -230,7 +230,6 @@ document.addEventListener("touchend",function(event){
 
     else{
         if(deltay >0){
-            event.preventDefault();
             //move dowm
             if(moveDown()){
                 setTimeout("random_Number()",210);
