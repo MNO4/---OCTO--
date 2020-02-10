@@ -194,9 +194,8 @@ $(document).keydown(function(event){
 });
 //?:js事件监听器 绑定一个匿名函数（用于监测触控
 //?: touchstart/touchend Web API事件
-
+var mo=function(e){e.preventDefault();};
 document.addEventListener("touchstart",function(event){
-    var mo=function(e){e.preventDefault();};
     $("#grid_container").style.overflow='hidden';        
     document.addEventListener("touchmove",mo,false);//禁止页面滑动
     startx = event.touches[0].pageX;
