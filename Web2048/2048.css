@@ -1,0 +1,138 @@
+body{
+    background-color: #FAF8EF;
+}
+
+
+header{
+    display: block;
+    margin:3px auto;
+    width: 500px;
+}
+
+#heading h1{
+    display: inline;    
+    font-size: 76px;
+    color: #776E65;
+}
+
+#scores{
+    float: right;
+    text-align: center;
+}
+
+#score,#best{
+    position: relative;
+    display: inline-block;
+    background-color: #bbada0;
+    color: #EEE4da;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 32px;
+    padding:0px 25px;
+}
+
+
+#score span,#best span{
+  color: #fff;
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: bold;
+}
+/*? :css3: @media 小于500px时（移动端 调整header的 CSS布局*/
+@media screen and (max-width: 500px) {   
+    #heading h1{
+        display: inline;    
+        font-size: 63px;
+        color: #776E65;
+    }
+
+    header{
+        width: 100%;
+    }  
+
+    #score span,#best span{
+        font-size: 22px;
+      }
+
+      #score,#best{
+        font-size: 15px;
+        padding:0px 10px;
+        line-height: 20px;
+    }
+}
+
+#button{
+  float: right;
+  padding: 6px 10px;
+
+  background: #8f7a66;
+  color: #f9f6f2;
+  
+  border:0;
+  border-radius:3px;
+
+  font-size: 17px;
+  font-weight:bold;
+}
+
+#button:hover{
+    color:#FFF;
+}
+
+
+#grid_container{ 
+    position:relative;
+    border-radius:6px;
+    margin:50px auto;
+    background-color:#bbada0;
+    height: 444px;
+    width: 444px;
+    padding:12px;
+}
+
+.grid_cell{
+    position:absolute;
+    border-radius:6px;
+    background-color:#ccc0b3;
+    height:102px;
+    width: 102px;
+
+}
+
+.number_cell{
+    border-radius:6px;
+    font-family:Arial;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 100px;
+    position: absolute;
+    text-align: center;
+}
+
+#over_cell{
+    position:absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+}
+
+#over_title{
+    display: block;
+    color: #776e65;
+}
+
+#over_text{
+    display: block;
+    margin: 20px auto;
+    padding: 6px 10px;
+    background: #8f7a66;
+    color: #f9f6f2;
+    border: 0;
+    border-radius: 2px;
+    font-size: 18px;
+
+}
