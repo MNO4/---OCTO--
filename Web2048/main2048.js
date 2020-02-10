@@ -194,13 +194,17 @@ $(document).keydown(function(event){
 });
 //?:js事件监听器 绑定一个匿名函数（用于监测触控
 //?: touchstart/touchend Web API事件
+
 document.addEventListener("touchstart",function(event){
-    event.preventDefault();
+    $("#grid_container").style.overflow='hidden';        
+    document.addEventListener("touchmove",mo,false);//禁止页面滑动
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 });
 //屏幕坐标系中 Y轴 是向下的
 document.addEventListener("touchend",function(event){
+    $("#grid_container").style.overflow='';//出现滚动条
+    document.removeEventListener("touchmove",mo,false);      
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
     var deltax = endx-startx;
