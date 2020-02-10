@@ -1,7 +1,7 @@
 documentWidth = window.screen.availWidth;//?: jsBom screen
-gridContainerWidth = 0.92 * documentWidth;//大方块边长
-cellSideLength = 0.18 * documentWidth;//小方块边长
-cellSpace = 0.04*documentWidth;//小方块间距
+gridContainerWidth = 0.91 * documentWidth;//大方块边长
+cellSideLength = 0.19 * documentWidth;//小方块边长
+cellSpace = 0.03*documentWidth;//小方块间距
 function getPosTop (i,j){
     return cellSpace+((cellSideLength+cellSpace)*i);
 }
