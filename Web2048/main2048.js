@@ -196,6 +196,7 @@ $(document).keydown(function(event){
 //?: touchstart/touchend Web API事件
 
 document.addEventListener("touchstart",function(event){
+    var mo=function(e){e.preventDefault();};
     $("#grid_container").style.overflow='hidden';        
     document.addEventListener("touchmove",mo,false);//禁止页面滑动
     startx = event.touches[0].pageX;
