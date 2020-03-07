@@ -37,7 +37,6 @@ function prepareForMobile(){
 function newGame(){
     //初始化棋盘
     init();
-    
     //生成2个随机数
     random_Number();
     random_Number();
@@ -194,18 +193,20 @@ $(document).keydown(function(event){
 });
 //?:js事件监听器 绑定一个匿名函数（用于监测触控
 //?: touchstart/touchend Web API事件
-document.addEventListener("touchstart",function(event){
+//
+
+document.getElementById('grid_container').addEventListener("touchstart",function(event){
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 });
 //屏幕坐标系中 Y轴 是向下的
-document.addEventListener("touchend",function(event){   
+document.getElementById('grid_container').addEventListener("touchend",function(event){   
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
     var deltax = endx-startx;
     var deltay = endy-starty;
 
-    if(Math.abs(deltax) < 0.15*documentWidth && Math.abs(deltay) < 0.15*documentWidth)
+    if(Math.abs(deltax) < 0.07*documentWidth && Math.abs(deltay) < 0.07*documentWidth)
         return;//防止误触，路径小于屏幕的0.2倍，则判定为非移动手势
     //X
     if( Math.abs(deltax) >= Math.abs(deltay)){ //?: js ,math.abs 方法
@@ -255,21 +256,27 @@ function checkGameOver(){
     }
 }
 
+
 function gameOver(){
     //覆盖一层半透明div 显示游戏失败 ?:css3 rgba
     //除了点击重新开始不允许任何操作
+
+    //现场创建一层div
     $("#grid_container").append('<div id="over_cell"></div>')
     $("#over_cell").css('width',gridContainerWidth - 2*cellSpace);
     $("#over_cell").css('height',gridContainerWidth - 2*cellSpace);
     $("#over_cell").css('padding',cellSpace);
     $("#over_cell").css('border-radius',0.02*gridContainerWidth);
-    $("#over_cell").append('<div id="over_title"></div>')
-
-    $("#over_cell").append('<button id = "over_text" onclick  = "newGame()">再来亿遍</button> ')
-    
+    $("#over_cell").append('<div id="over_title"></div>');
+    $("#over_cell").css('background','#eee4da99');
+    $("#over_cell").append('<button id = "over_text" onclick  = "newGame()">再来亿遍</button> ');
     $("#over_title").css("font-size",0.13*gridContainerWidth);
     $("#over_title").text('游戏结束');
     $("#over_title").css("margin-top",0.25*gridContainerWidth);
+    //隐藏div 并执行动画,实现结束动画效果
+    $("#over_cell").css("display",'none');
+    $("#over_cell").css("opacity",0);
+    overShow();
 }
 
 function moveLeft(){

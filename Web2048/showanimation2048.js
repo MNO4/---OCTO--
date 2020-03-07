@@ -32,5 +32,19 @@ function updateScore(score){
     }
 }
 
+function overShow(){
+    let timer = null;
+    let alpha = 0;
+    let rate = 0.04;//速率
+    $("#over_cell").css("display",'block');
+    timer = setInterval(function(){
+        alpha += rate;
+        $("#over_cell").css("opacity",alpha);
+        if(img_ul_li[img_now].style.opacity > 1 ){
+            clearInterval(timer);
+            $("#over_cell").css("opacity",1);
+        }
+    },10);
+}
 
 

@@ -117,7 +117,7 @@ header{
     top: 0;
     left: 0;
     text-align: center;
-
+    transition: all  1s;
 }
 
 #over_title{
