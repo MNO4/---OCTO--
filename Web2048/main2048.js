@@ -28,11 +28,11 @@ function prepareForMobile(){
     $("#grid_container").css('width',gridContainerWidth - 2*cellSpace);
     $("#grid_container").css('height',gridContainerWidth - 2*cellSpace);
     $("#grid_container").css('padding',cellSpace);
-    $("#grid_container").css('border-radius',0.02*gridContainerWidth);
+    $("#grid_container").css('border-radius',6);
 
     $(".grid_cell").css('width',cellSideLength);
     $(".grid_cell").css('height',cellSideLength);
-    $(".grid_cell").css('border-radius',0.02*cellSideLength);
+    $(".grid_cell").css('border-radius',5);
 }
 function newGame(){
     //初始化棋盘
