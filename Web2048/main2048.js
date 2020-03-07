@@ -195,6 +195,10 @@ $(document).keydown(function(event){
 //?: touchstart/touchend Web API事件
 //
 
+document.getElementById('grid_container').addEventListener('touchmove', function(event){
+    event.preventDefault();
+    });
+
 document.getElementById('grid_container').addEventListener("touchstart",function(event){
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
