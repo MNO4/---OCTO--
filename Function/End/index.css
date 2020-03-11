@@ -150,7 +150,7 @@ body{
     background-size: 23px 5px;
 }
 .screen-front{
-    background-color: #c8c8c8;
+	background-color: #3c3c3c;
     border:5px solid black;
     background-image: url(macos-sierra-hands-on-0004-1500x938.jpg);font-size: 62.5%;/*高版本谷歌不支持12px以下的文字 所以logo用图片来代替 */  
     transform: rotateY(180deg);
