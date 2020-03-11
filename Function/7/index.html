@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+    <script type="text/javascript">
+    const WIDTH = 20,HEIGHT = 20,SIZE = 20;
+    let snackArr = [];
+    let foodX,foodY;
+    let direction = [1,0];
+    let interval;
+
+    window.onload = function(){
+      let mapDom = document.getElementById('map');
+      mapDom.style.width = WIDTH*SIZE + 'px';
+      mapDom.style.height  =  HEIGHT*SIZE + 'px';
+      init();
+       interval = setInterval(game,100);
+    }
+    //自记录步骤
+    //js创建 框，蛇身，随机食物
+    //使蛇身上下左右实现移动 按键触发函数
+    //实现 吃到食物身体变长  违反规则时候失败 函数
+    //别忘了用 window.onlaod加载函数,游戏结束别忘了清空定时器
+
+
+
+    document.onkeydown = function(e){
+      switch(e.keyCode){
+          case 37 : if(direction[0] != 1) {direction = [-1,0]} break;//←
+          case 38 : if(direction[1] != 1) {direction = [0,-1]} break;//↑ 
+          case 39 : if(direction[0] != -1) {direction = [1,0]} break;//→ 
+          case 40 : if(direction[1] != -1) {direction = [0,1]} break;//↓
+          case 13 : init();interval = setInterval(game,200);break;
+      }
+    }
+    function game(){
+      check();
+      checkself();
+      if(isfood()){
+        addSnackBody();
+        createfood();
+      }
+      let snackHtml = '';
+      for(let i = 0;i<snackArr.length;i++){
+        snackHtml += '<div class="snackBody" style="left: '+ snackArr[i].x*SIZE + 'px; top: '+ snackArr[i].y*SIZE +'px"></div>';
+      }
+      snackHtml += '<div class  = "food" style = "left:' + foodX*SIZE + 'px; top :' + foodY*SIZE +'px"></div>';
+      document.getElementById('map').innerHTML  = snackHtml;
+      move();
+    }
+    function init(){
+      snackArr[0] = {x:5,y:4};
+      snackArr[1] = {x:4,y:4};
+      snackArr[2] = {x:3,y:4};
+      createfood();
+    }
+    function createfood(){
+      foodX = Math.floor(Math.random()*WIDTH);
+      foodY =  Math.floor(Math.random()*HEIGHT);
+    }
+
+    function move(){
+      for(let i = snackArr.length -1 ;i>0;i--){
+        snackArr[i].x =  snackArr[i-1].x;
+        snackArr[i].y =  snackArr[i-1].y;
+      }
+      snackArr[0].x +=  direction[0];
+      snackArr[0].y +=  direction[1];
+    }
+
+    function check(){
+      if(snackArr[0].x < 0 ||snackArr[0].y < 0 || snackArr[0].x > WIDTH ||snackArr[0].y > HEIGHT){
+        
+        clearInterval(interval);
+        alert('游戏结束');
+      }
+    }
+
+    function isfood(){
+      if(snackArr[0].x == foodX && snackArr[0].y == foodY){
+        return true;
+      }
+    }
+
+ 
+
+    function addSnackBody(){
+      let lastBody = snackArr[snackArr.length -1];
+      snackArr.push({x:lastBody.x,y:lastBody.y});
+    }
+
+    function checkself(){
+        let snackHeader = snackArr[0];
+        for (let i = 1 ; i < snackArr.length ; i ++){
+          if(snackArr[i].x == snackHeader.x && snackArr[i].y == snackHeader.y){
+            alert("失败 游戏结束 你咬死了自己");
+            clearInterval(interval);
+          }
+        }
+      }
+
+    </script>
+</html>

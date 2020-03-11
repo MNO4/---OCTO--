@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>简易验证码</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        #show{
+            margin: auto;
+            width: 120px;
+            height:40px ;
+            font-size: 27px;
+            text-align: center;
+            line-height:37px;
+            color: #333;
+            border: 1px solid seagreen;
+        }
+        #box{
+            top:66px;
+            left: 44%;
+            position: absolute;
+        }
+    </style>
+       <script src="https://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            window.onload = function(){
+                var codeStr = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                var num = 4;//随机数量
+                var sln = codeStr.length;
+                var show = document.getElementById('show');
+                var button  = document.getElementById('button');
+                var str = '';
+                function getRandom(start,sln){//随机数      	
+                return Math.floor(Math.random() * sln);//随机选择codeStr元素下标	
+                }
+                function number(){
+                    str = '';
+                    for(var i = 0;i<num;i++){ 
+                        var ran = getRandom(0,sln);//保证codeStr所有元素参与随机选择
+                        str += codeStr.charAt(ran);
+                    }
+                    show.innerHTML = str;
+                }
+                function check_number(){
+                var result = $("#input_text").val();
+                result = result.toUpperCase();//将字符统一转换成大写 实现不区分大小写验证
+                str = str.toUpperCase();
+                     if(result == str){
+                        alert("输入正确");
+                     }
+                     else{
+                        alert("输入错误");
+                     }
+                }
+                number();
+                show.onclick = function(){
+                    number();
+                }
+                button.onclick = function(){
+                    check_number();
+                }
+            }
+
+        </script>
+</head>
+
+<body>
+    <div id = "show" onclick="number()"></div>
+    <div id = "box" >
+        <input id = "input_text" type="text">
+        <button  id = "button" onclick = "check_number()">提交</button>
+    </div>
+</body>
+</html>

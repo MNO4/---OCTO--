@@ -1,0 +1,66 @@
+#head{
+    width: 238px;
+    height: 165px;
+    border: 1px solid #bbbbbb;
+    text-align: center;
+    overflow: hidden;
+}
+#head ul{
+    position: relative;
+    margin: 10px auto;
+     left: -12px;
+    color: #bbbbbb;
+    cursor: pointer;
+}
+
+
+#head ul::after{
+    content: "";
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 2px;
+    bottom: -8px;
+    background-color: #378ce62d;
+}
+#head li{
+    position: relative;
+    color: #444444;
+    display: inline-block;
+    list-style: none ;
+    margin-right: 9px;
+    transition: color 0.2s;
+ }
+
+#head li:hover{
+    color: #378CE6; 
+    font-weight: 700;
+}
+#write1,
+#write2,
+#write3,
+#write4
+{
+    position: relative;
+    
+}
+#write1 a,
+#write2 a,
+#write3 a,
+#write4 a{
+    position: relative;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+#write1 a{
+    display: block;
+}
+a:link {color: #444444;}		/* 未访问的链接 */
+a:visited {color: #444444}	/* 已访问的链接 */
+a:hover {
+    color: #378CE6;
+    text-decoration:  underline;
+}	/* 鼠标移动到链接上 */

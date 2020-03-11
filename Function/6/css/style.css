@@ -1,0 +1,251 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#d1{
+	position: relative; 
+	width: 200px;
+	height: 100px;
+	font-size: 32px;
+	text-align: center;
+	margin: 100px auto;
+	line-height: 100px;    
+	color: #ecf0f1;
+	background-color: dodgerblue;
+	transition:  all 1s linear;
+	font-weight: bold;
+}
+#d2{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 0;
+	height: 10px;
+	transition: all 1s;
+}
+#d4{
+	position: absolute;
+	bottom:0;
+	right: 0;
+	width: 0;
+	height: 10px;
+	
+	transition: all 1s;
+}
+#d3{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 10px;
+	height: 0;
+	
+	transition: 1s 1s;
+}
+#d5{
+	position: absolute;
+	bottom:0;
+	right: 0;
+	width: 10px;
+	height: 0;
+	color: dodgerblue;
+	transition: 1s 1s;
+}
+#d1:hover{
+	color: dodgerblue;
+	background-color:transparent;
+}
+#d1:hover #d2,#d1:hover #d4{
+	width: 200px;
+	background-color: dodgerblue;
+}
+#d1:hover #d3,#d1:hover #d5{
+	height: 100px;
+	background-color: dodgerblue;
+}
+
+/* --------------------------------------------------- */
+a {
+	text-decoration:none
+}
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	font-family:Raleway;
+	background-color:#bedfe7;
+}
+
+button{
+	position: relative;
+	background-color: transparent;
+	font-size: 18px;
+	border: none;
+	margin: 1em 0.8em;
+	padding: 0.8em 1.5em;
+}
+
+.button.type1::after,.button.type1::before{
+	position: absolute;
+	content: "";
+	display: block;
+	border:2px solid;
+	width: 20%;
+	height: 20%;
+	transition: all 0.8s ease;
+}
+
+.button.type1::after{
+	top:0;
+	left: 0;
+	border-radius: 2px;
+	border-right-color:transparent;
+	border-bottom-color: transparent;
+	border-top-color: #566473;
+	border-left-color:  #566473;
+}
+.button.type1::before{
+	bottom:0;
+	right: 0;
+	border-radius: 2px;
+	border-right-color:#566473;
+	border-bottom-color: #566473;
+	border-top-color:   transparent;
+	border-left-color:  transparent;
+}
+
+.button.type1:hover::after,.button.type1:hover::before{
+	width: 100%;
+	height: 100%;
+}
+
+.button.type3::after,.button.type3::before{
+	position: absolute;
+	content: "";
+	display: block;
+	border:2px solid;
+	width: 20%;
+	height: 20%;
+	transition: all 0.8s ease;
+}
+
+.button.type3::after{
+	top:0;
+	left: 0;
+	border-radius: 2px;
+	border-right-color:transparent;
+	border-bottom-color: transparent;
+	border-top-color: teal;
+	border-left-color:  teal;
+}
+.button.type3::before{
+	bottom:0;
+	right: 0;
+	border-radius: 2px;
+	border-right-color:teal;
+	border-bottom-color: teal;
+	border-top-color:   transparent;
+	border-left-color:  transparent;
+}
+
+.button.type3:hover::after,.button.type3:hover::before{
+	border-color:darkgreen;
+	width: 100%;
+	height: 100%;
+}
+
+.button.type2::before,.button.type2::after{
+	position: absolute;
+	content: "";
+	display: block;
+	top: 100%;
+	left:0;
+	width:100%;
+	height:2px;	
+	background-color: teal;
+	transition: all 0.8s;
+	transform: scale(0.8);
+}
+
+.button.type2:hover::before{
+	top: 0;
+	transform: scale(1);
+}
+
+.button.type2:hover::after{
+	transform: scale(1);
+}
+
+
+
+
+
+.btn {
+	border: none;
+	color: white;
+	overflow: hidden;
+	margin: 1rem;
+	padding: 0;
+	text-transform: uppercase;
+	width: 150px;
+	height: 40px;
+	cursor:pointer;
+}
+.btn.color-1 {
+	background-color: #426fc5;
+}
+.btn.color-2 {
+	background-color: #00897b;
+}
+.btn.color-3 {
+	background-color: #f6774f;
+}
+.btn.color-4 {
+	background-color: #e94043;
+}
+.btn-border.color-1 {
+	background-color: transparent;
+	border: 2px solid #426fc5;
+	color: #426fc5;
+}
+.btn-border.color-2 {
+	background-color: transparent;
+	border: 2px solid #00897b;
+	color: #00897b;
+}
+.btn-border.color-3 {
+	background-color: transparent;
+	border: 2px solid #f6774f;
+	color: #f6774f;
+}
+.btn-border.color-4 {
+	background-color: transparent;
+	border: 2px solid #e94043;
+	color: #e94043;
+}
+.btn-round {
+	border-radius: 10em;
+}
+.material-design {
+	position: relative;
+}
+.material-design canvas {
+	opacity: 0.25;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.container {
+	align-content: center;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 46rem;
+}

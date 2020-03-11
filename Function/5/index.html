@@ -1,0 +1,294 @@
+<html>
+    <head>
+        <style> 
+            .mnav:link {color:#333;}    /* 未被访问的链接 */
+            .mnav:visited {color:#333;} /* 已被访问的链接 */
+            .mnav:hover {color:#0000FF;}   /* 鼠标指针移动到链接上 */
+            .mnav:active {color:#0000FF;}  /* 正在被点击的链接 */
+            .div0{
+                width:100%;
+                height: 26px;
+            }
+            .div1{
+                width:463px;
+                height: 24px;
+                float: right;
+                margin-top: 10px;
+            }
+            .mnav{
+                margin-left: 15px;
+                font-size: 13px;
+                font-weight: 700;   
+                
+            }   
+            #show{
+                display: none;
+                opacity: 0;
+                height:100%;
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 13px;
+                text-align: center;
+                width: 80px;
+                border-left: 1px solid #e7e7e7;
+                background-color: #f9f9f9;
+                cursor: default;
+                transition:all 0.4s;
+            }
+            #show p{
+                padding-top: 16px;
+                line-height: 27px;
+                margin: 0;
+            }
+            .bdbriwrapper span{
+                width: 36px;
+                height: 36px;
+                display: block;
+                margin: 10px auto 5px;
+            }
+
+            .bdbriimgitem_1{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/yingxiao_b585c1e.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriimgitem_2{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/zhidao_cbf2aff.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriimgitem_3{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/qqjt_9809ca8.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriimgitem_4{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/image_55b5909.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriimgitem_5{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/wenku_aaf198d.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriimgitem_6{
+                background:url(https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/fengyunbang_1986a40.png) no-repeat;
+                background-size: cover;
+            }
+            .bdbriwrapper a{
+                display: block;
+                text-decoration: none;
+                margin: 6px auto;
+                border-top: 1px solid #e7e7e7;
+            }
+
+            .bdbriwrapper a:link {color:#666;}    /* 未被访问的链接 */
+            .bdbriwrapper a:visited {color:#666;} /* 已被访问的链接 */
+            #bri{
+                margin-left: 13px;
+                font-size: 13px;
+                line-height: 22px;
+                text-decoration:none;
+                text-align: center;
+                background-color: dodgerblue;
+                color: #fff;
+                width: 60px;
+                height: 23px;
+                cursor: default;
+                transition:all 0.4s;
+            }
+            .box{
+                position: fixed;
+                top: 40px;
+                width: 100%;
+                text-align: center;
+            }   
+            #ig{
+                
+                width: 270px;
+                height: 129px;
+                
+            }
+            .text{
+                border:1px solid #b6b6b6;
+                width: 540px;
+                height: 36px;
+            }
+
+            .sub{
+                position: relative;
+                font-size: 16px;
+                top: 2px;
+                left: -7px;
+                width: 100px;
+                height: 36px;
+                border: 0;
+                background-color: #3385ff;
+                color: white;
+            }
+            .text:hover{
+                border: 1px solid #999;
+            }
+            .sub:hover{
+                box-shadow: 1px 1px 1px #ccc;
+                background-color: #317bf3;
+            }
+            .forombox{
+                position: relative;
+                top:20px; 
+                 min-width: 650px;
+                }
+            .titlebox{
+                display: block;
+                position: relative;
+                top:60px;
+            }
+            .title{
+                width: 106px;
+                height: 106px;
+                padding: 5px;
+                border: 1px solid #f3f3f3
+            }
+            .white{
+                color: #333;
+                font-size: 16px;
+                line-height: 0px;
+                letter-spacing: 3px;
+            }
+            .subwhite{
+                color: #999;
+                font-size: 14px;
+                line-height: 12px;
+                font-weight: 300;
+            }
+            .div_foot{
+                position: relative;
+                top:100px;
+                color: #999;
+                font-size: 12px;
+            }
+            .div_foot a:link {color:#999;}    /* 未被访问的链接 */
+            .div_foot a:visited {color:#999;} /* 已被访问的链接 */
+
+            .div_foot a{
+                margin-left: 22px;
+            }
+            .empty{
+                position: relative;
+                top:8px;
+            }
+           .bdbriwrapper a:hover{
+                background-color: rgba(0, 0, 0, 0.1);
+           }
+        </style>
+
+  
+    </head>
+    <title>
+        千度一下，你就知道
+    </title>
+    <body>
+        <div class="div0">
+                <div class="div1">
+                        <a href="http://news.baidu.com" name="tj_trnews" class="mnav">新闻</a>
+                        <a href="https://www.hao123.com" name="tj_trhao123" class="mnav">hao123</a>
+                        <a href="http://map.baidu.com" name="tj_trmap" class="mnav">地图</a>
+                        <a href="http://v.baidu.com" name="tj_trvideo" class="mnav">视频</a>
+                        <a href="http://tieba.baidu.com" name="tj_trtieba" class="mnav">贴吧</a>
+                        <a href="http://xueshu.baidu.com" name="tj_trxueshu" class="mnav">学术</a>
+                        <a href="https://passport.baidu.com/v2/?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="mnav" onclick="return false;">登录</a>
+                        <a href="http://www.baidu.com/gaoji/preferences.html" name="tj_settingicon" class="mnav">设置</a>
+                        <a href="http://www.baidu.pcom/more/" name="tj_briicon" id="bri" style="display: inline-block;">更多产品</a>
+                <div id="show">
+                    <p>更多产品</p>
+                    <div class="bdbriwrapper">
+                        <a href="http://e.baidu.com?refer=889" name="tj_yingxiao"><span class="bdbriimgitem_1"></span>百度营销</a>
+                        <a href="http://music.taihe.com" name="tj_mp3"><span class="bdbriimgitem_3"></span>音乐</a>
+                        <a href="http://image.baidu.com" name="tj_img"><span class="bdbriimgitem_4"></span>图片</a>
+                        <a href="http://zhidao.baidu.com" name="tj_zhidao"><span class="bdbriimgitem_2"></span>知道</a>
+                        <a href="http://wenku.baidu.com" name="tj_wenku"><span class="bdbriimgitem_5"></span>文库</a>
+                        <a href="http://top.baidu.com" name="tj_bang"><span class="bdbriimgitem_6"></span>风云榜</a>
+                        <div class="bdbrievenmore"><a href="//www.baidu.com/more/" name="tj_more">
+                            全部产品&gt;&gt;</a>
+                        </div>
+                     </div>
+                </div>   
+                    </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.baidu.com/s?wd=新型冠状病毒肺炎" target="_blank"><img id = "ig" src="2.gif" alt    ="众志成城 抗击疫情"></a>
+            <div class="forombox">
+                <form action="http://www.baidu.com/baidu"  target="_blank" >
+                    <input class = "text" type="text" name = "word">
+                    <input class = "sub" type="submit" name = "submit" value="百度一下"  href="https://www.baidu.com/">
+                 </form>
+            </div>
+
+            <div class="titlebox">
+                <img class = "title" src="2.png" >
+                <p class = "white">下载百度APP</p>
+                <p class = "subwhite">有事搜一搜&nbsp&nbsp没事看一看</p>
+            </div> 
+
+            <div>
+                <div class="div_foot">
+                    <a href="https://www.baidu.com/cache/sethelp/help.html">把百度设为主页</a>
+                    <a href="http://home.baidu.com/">关于百度</a>
+                    <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-irhome">About&nbsp&nbspBaidu</a>
+                    <a href="http://e.baidu.com/?refer=888">百度推广</a>
+                    &nbsp&nbsp(京)-经营性-2017-0020
+                    <br>
+
+                    <div class = "empty">
+                        ©2020 Baidu <a href="https://www.baidu.com/duty/">使用百度前必读</a>
+                        <a href="http://jianyi.baidu.com/">意见反馈</a>
+                        京ICP证030173号
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a>
+                    </div>
+                   
+                </div>
+    
+            </div>
+        </div>
+        <script> 
+            var bri  = document.getElementById('bri');
+            var show = document.getElementById('show');
+            var speed = 2;
+            var timer = null;
+            var alpha=0;//起始效果 0为不显示
+            show.style.opacity = 0;
+
+            bri.onmouseover = function(){
+                show.style.display = 'block';
+                startrun(100);
+             } 
+             show.onmouseleave = function(){
+                startrun(0);
+                //使用onmouseout会有bug，可以去尝试下，同时移动到其子元素身上也会触发事件。
+             }
+             
+            function startrun(target){//js透明度渐变效果轮子?
+                clearInterval(timer);
+                timer = setInterval(function(){
+                if(target > alpha){
+                    speed = 2;
+                }else{
+                    speed = -2;
+                }
+                
+                if(alpha == target){
+                    clearInterval(timer);
+                    if(alpha == 0){
+                        show.style.display = 'none';
+                    }
+                }
+                else{
+                    alpha = alpha + speed;
+                    show.style.opacity = alpha/100;
+                    // document.title = alpha;
+                }
+                },2)
+            }
+
+         </script>
+    </body>
+</html>
